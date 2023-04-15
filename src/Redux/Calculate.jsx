@@ -15,11 +15,16 @@ const Calculate = () => {
   }
 
   const sub = () =>{
-    setnum(num = num -1);
-    mystore.dispatch({
-        type:"number",
-        numberdata:num,
-    })
+    if(num > 0){
+        setnum(num = num -1);
+        mystore.dispatch({
+            type:"number",
+            numberdata:num,
+        })
+    }
+    else{
+        alert("Value can not be less than zero");
+    }
   }
 
   const reset = () =>{
